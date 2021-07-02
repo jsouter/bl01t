@@ -7,7 +7,7 @@ on:
 env:
   HELM_EXPERIMENTAL_OCI: 1 #enable OCI support
   HELM_VERSION_TO_INSTALL: 3.5.0 # version of HELM to install
-  GCR_ROOT: ghcr.io/epics-containers
+  GCR_ROOT: ghcr.io/${{ github.repository_owner }}
 
 jobs:
   build-and-push-helm-charts:
@@ -33,7 +33,7 @@ jobs:
           # tar up any config folders that require it
           ./tar_config_src.sh
 
-          # only publish if this is a tagged releasse
+          # only publish if this is a tagged release
           if [[ ${GITHUB_REF} = refs/tags/* ]] ; then
 
             TAG=${GITHUB_REF#refs/tags/}
