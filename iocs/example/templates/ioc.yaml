@@ -6,7 +6,13 @@
   The files must be text only. Any files ending in .tz are explicitly ommitted
 */ -}}
 
-{{ (.Files.Glob "config/*[!.tz]").AsConfig | indent 2 }}
+data:
+{{- range $path, $_ := .Files.Glob "config/*" }}
+{{- if not (hasSuffix ".tz" $path) }}
+  {{ base $path }}: |
+{{ $.Files.Get $path | indent 4 }}
+{{- end }}
+{{- end }}
   version.txt: |
     IOC {{ .Release.Name }} version {{ .Chart.AppVersion }}
 
