@@ -7,7 +7,7 @@ iocFolder: /epics/ioc
 
 # when autosave is true: create PVC and mount at /autosave
 autosave: false
-# when useAffinity is true: only run on nodes with label beamline:blxxp
+# when useAffinity is true: only run on nodes with label beamline:blxxi
 useAffinity: false
 # resource limits
 memory: 2048Mi

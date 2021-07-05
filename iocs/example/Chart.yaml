@@ -12,5 +12,4 @@ appVersion: 2021.2.0
 dependencies:
   - name: helm-ioc-lib
     version: "1.2"
-    #repository: "oci://ghcr.io/epics-containers"
-    repository: "file:///home/giles/containers/helm-ioc-lib"
+    repository: "oci://ghcr.io/epics-containers"

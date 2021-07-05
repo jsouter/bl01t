@@ -9,7 +9,7 @@
 data:
 {{- range $path, $_ := .Files.Glob "config/*" }}
 {{- if not (hasSuffix ".tz" $path) }}
-  {{ base $path }}: |
+  {{ base $path }}: |-
 {{ $.Files.Get $path | indent 4 }}
 {{- end }}
 {{- end }}
