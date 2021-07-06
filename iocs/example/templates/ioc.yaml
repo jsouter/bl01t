@@ -6,7 +6,6 @@
   The files must be text only. Any files ending in .tz are explicitly ommitted
 */ -}}
 
-data:
 {{- range $path, $_ := .Files.Glob "config/*" }}
 {{- if not (hasSuffix ".tz" $path) }}
   {{ base $path }}: |-
