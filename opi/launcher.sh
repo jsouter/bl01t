@@ -19,4 +19,5 @@ opts=${opts}"-ti"
 
 set -x
 xhost +local:docker
+docker pull ${image}
 docker run ${environ} ${volumes} ${@} ${opts} ${image} edm -x -noedit ${start}
