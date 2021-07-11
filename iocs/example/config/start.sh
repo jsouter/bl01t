@@ -29,4 +29,4 @@ boot=${config_dir}/ioc.boot
 # Output to /tmp for guarenteed writability
 msi -MTOP=${TOP},THIS_DIR=${config_dir},ADCORE=${adcore} ${boot} > /tmp/ioc.boot
 
-exec ${EPICS_ROOT}/ioc/bin/linux-x86_64/ioc /tmp/ioc.boot
+exec ${IOC}/bin/linux-x86_64/ioc /tmp/ioc.boot

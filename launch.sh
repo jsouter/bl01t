@@ -33,6 +33,11 @@ fi
 
 image=$(awk '/base_image/{print $NF}' ${ioc}/values.yaml)
 
+if [ -z "${image}" ]; then
+  echo "unable to determine image to load from  ${ioc}/values.yaml"
+  exit 1
+fi
+
 echo docker run -it --network host $@ -v=${ioc}/config:/epics/ioc/config:rw ${image} ${command}
 docker run -it --network host $@ -v=${ioc}/config:/epics/ioc/config:rw -vautosave:/autosave ${image} ${command}
 
