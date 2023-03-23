@@ -1,0 +1,38 @@
+# default values for all IOCs on blxxi
+exports:
+  beamline_defaults:
+    beamline: blxxi
+    namespace: blxxi
+    serviceAccount: blxxi-priv
+
+    # NOTE: the following are all beamline defaults that can be overridden in
+    # individual IOC values.yaml files.
+
+    # provide a PVC for autosave
+    autosave: true
+
+    hostNetwork: true
+
+    # useAffinity - when true, only run on nodes with label beamline:blxxi
+    useAffinity: false
+
+    # some beamline default resource limits
+    resources:
+      limits:
+        cpu: "3"
+        memory: 1Gi
+      requests:
+        cpu: 500m
+        memory: 200Mi
+
+    # Where to find RTEMS IOC files
+    # blxxi - localhost 127.0.0.1 is a placeholder only
+    globalenv:
+      - name: "K8S_IOC_TFTP_ADDR"
+        value: "127.0.0.1"
+      - name: "K8S_IOC_TFTP_PORT"
+        value: "69"
+      - name: "K8S_IOC_NFS_MOUNT"
+        value: "127.0.0.1:iocs"
+      - name: "K8S_IOC_ROOT"
+        value: "/nfsv2-tftp"
