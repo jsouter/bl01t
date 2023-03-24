@@ -15,8 +15,13 @@ dependencies:
     repository: file://../../beamline-chart
     import-values:
       - beamline_defaults
+  # - name: helm-ioc-lib
+  #   version: "1.6.2"
+  #   repository: oci://ghcr.io/epics-containers
+  #   import-values:
+  #     - defaults
   - name: helm-ioc-lib
-    version: "1.6.2"
-    repository: oci://ghcr.io/epics-containers
+    version: "1.0.0-b1"
+    repository: file://../../../helm-ioc-lib
     import-values:
       - defaults

@@ -1,1 +1,1 @@
-base_image: ghcr.io/epics-containers/ioc-adsimdetector:2.10r3.2.run
+base_image: ghcr.io/epics-containers/ioc-adsimdetector-linux-runtime:work

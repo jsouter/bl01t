@@ -2,8 +2,9 @@
 exports:
   beamline_defaults:
     beamline: blxxi
-    namespace: blxxi
-    serviceAccount: blxxi-priv
+    # uncomment to force namespace - otherwise it is provided by helm at install time
+    # namespace: blxxi
+    # serviceAccount: blxxi-priv
 
     # NOTE: the following are all beamline defaults that can be overridden in
     # individual IOC values.yaml files.
