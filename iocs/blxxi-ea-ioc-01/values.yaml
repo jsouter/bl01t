@@ -1,1 +1,10 @@
-base_image: ghcr.io/epics-containers/ioc-adsimdetector-linux-runtime:work
+base_image: ghcr.io/epics-containers/ioc-adsimdetector-linux-runtime:23.3.1
+
+env:
+  # Liveness configuration
+  - name: K8S_IOC_LIVENESS_ENABLED
+    value: true
+  - name: K8S_IOC_PORT
+    value: 5064
+  - name: K8S_IOC_PV
+    value: blxxi-ea-ioc-90:UPTIME
