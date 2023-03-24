@@ -15,9 +15,7 @@ fi
 image=gcr.io/diamond-pubreg/controls/python3/s03_utils/epics/edm:latest
 environ="-e DISPLAY=$DISPLAY -e EDMDATAFILES=/screens"
 volumes="-v ${thisdir}/${ioc}:/screens -v /tmp:/tmp"
-opts=${opts}"-ti"
+opts=${opts}"-ti --net=host"
 
 set -x
-xhost +local:docker
-docker pull ${image}
 docker run ${environ} ${volumes} ${@} ${opts} ${image} edm -x -noedit ${start}
