@@ -20,7 +20,7 @@ font "arial-medium-r-14.0"
 showGrid
 snapToGrid
 textColor index 14
-title "Device - PCO"
+title "Device - SIM"
 topShadowColor index 1
 endScreenProperties
 
@@ -111,7 +111,7 @@ fgColor index 14
 font "arial-bold-r-16.0"
 fontAlign "center"
 value {
-  "PCO Top"
+  "SIM Top"
 }
 endObjectProperties
 
@@ -331,7 +331,7 @@ font "arial-bold-r-14.0"
 fontAlign "center"
 useDisplayBg
 value {
-  "PCO"
+  "SIM"
 }
 endObjectProperties
 

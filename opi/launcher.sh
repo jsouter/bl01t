@@ -18,4 +18,4 @@ volumes="-v ${thisdir}/${ioc}:/screens -v /tmp:/tmp"
 opts=${opts}"-ti --net=host"
 
 set -x
-docker run ${environ} ${volumes} ${@} ${opts} ${image} edm -x -noedit ${start}
+docker run --rm -d ${environ} ${volumes} ${@} ${opts} ${image} edm -x -noedit ${start}
