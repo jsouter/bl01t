@@ -1,10 +1,46 @@
-base_image: ghcr.io/epics-containers/ioc-adsimdetector-linux-runtime:23.3.1
+base_image: ghcr.io/epics-containers/ioc-adsimdetector-linux-runtime:23.3.4
 
-env:
-  # Liveness configuration
-  - name: K8S_IOC_LIVENESS_ENABLED
-    value: true
-  - name: K8S_IOC_PORT
-    value: 5064
-  - name: K8S_IOC_PV
-    value: blxxi-ea-ioc-90:UPTIME
+# PV Prefix if different from 'name' in Chart.yaml (name must be lower case)
+prefix: BLXXI-EA-IOC-01
+#
+################################################################################
+#
+# Below we show avbailble configuration Items. A standard Linux IOC which
+# will work with all of these commented out as the defaults will work as is.
+#
+################################################################################
+
+# # for RTEMS IOCS add the volume name for the filesystem where RTEMS
+# # IOCs look for their files - requires the nfsv2-tftp service is running
+# # in the cluster:
+# nfsv2TftpClaim: ioc-nfsv2-tftp-claim
+
+# env:
+#   # Liveness configuration
+#   - name: K8S_IOC_LIVENESS_ENABLED
+#     value: true
+#     # leave address blank unless PV is not normally discoverable
+#   - name: K8S_IOC_ADDRESS
+#     value: 172.23.250.15
+#     # leave port blank if it is the default 5064
+#   - name: K8S_IOC_PORT
+#     value: 7064
+#     # leave K8S_IOC_PV blank if it is the default of ${IOC_PREFIX}:UPTIME
+#   - name: K8S_IOC_PV
+#     value: bl45p-ea-ioc-90:UPTIME
+
+#   # RTEMS console connection details
+#   - name: RTEMS_VME_CONSOLE_ADDR
+#     value: ts0001.cs.diamond.ac.uk
+#   - name: RTEMS_VME_CONSOLE_PORT
+#     value: "7007"
+#   - name: "RTEMS_VME_AUTO_REBOOT"
+#     value: true
+#   - name: "RTEMS_VME_AUTO_PAUSE"
+#     value: true
+
+#   # RTEMS crate monitor connection details
+#   - name: RTEMS_VME_CRATE_MONITOR_ADDR
+#     value: ts0001.cs.diamond.ac.uk
+#   - name: "RTEMS_VME_CRATE_MONITOR_PORT"
+#     value: "7008"

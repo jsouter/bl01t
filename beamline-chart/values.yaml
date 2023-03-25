@@ -26,9 +26,18 @@ exports:
         cpu: 500m
         memory: 200Mi
 
-    # Where to find RTEMS IOC files
-    # blxxi - localhost 127.0.0.1 is a placeholder only
     globalenv:
+      # by default enable a liveness probe that checks ${IOC_PREFIX}:UPTIME
+      - name: "K8S_IOC_LIVENESS_ENABLED"
+        value: true
+      #
+      # TODO - NOT YET REQUIRED ################################################
+      #
+      # In future these values could be used to auto configure the RTEMS
+      # boot loader.
+      #
+      ##########################################################################
+      # Where to find RTEMS IOC files - can be removed if you have no RTEMS
       - name: "K8S_IOC_TFTP_ADDR"
         value: "127.0.0.1"
       - name: "K8S_IOC_TFTP_PORT"
