@@ -2,8 +2,7 @@
 
 {{- /*
   add the contents of every file in the config folder of this IOC helm chart
-  into the config map - this must include start.sh the startup script.
-  The files must be text only. Any files ending in .tz are explicitly ommitted
+  into the config map - The files must be text only.
 */ -}}
 
 {{ (.Files.Glob "config/*").AsConfig | indent 2 }}

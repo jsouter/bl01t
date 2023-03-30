@@ -2,8 +2,7 @@
 exports:
   beamline_defaults:
     beamline: blxxi
-    # uncomment to force namespace - otherwise it is provided by helm at install time
-    # namespace: blxxi
+    # uncomment to force the service account, leave commented for namespace default
     # serviceAccount: blxxi-priv
 
     # NOTE: the following are all beamline defaults that can be overridden in
@@ -33,7 +32,7 @@ exports:
       #
       # TODO - NOT YET REQUIRED ################################################
       #
-      # In future these values could be used to auto configure the RTEMS
+      # In future these values could be used to auto configure an RTEMS
       # boot loader.
       #
       ##########################################################################
