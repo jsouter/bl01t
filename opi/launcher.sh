@@ -13,7 +13,7 @@ then
 fi
 
 image=ghcr.io/epics-containers/edm:latest
-environ="-e DISPLAY -e EPICS_CA_ADDR_LIST -e EPICS_CA_AUTO_ADDR_LIST -e EDMDATAFILES=/screens"
+environ="-e DISPLAY -e EPICS_CA_ADDR_LIST -e EPICS_CA_AUTO_ADDR_LIST -e EPICS_CA_SERVER_PORT -e EDMDATAFILES=/screens"
 volumes="-v ${thisdir}/${ioc}:/screens -v /tmp:/tmp"
 opts=${opts}"-ti --net=host"
 
