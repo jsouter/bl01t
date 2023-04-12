@@ -1,5 +1,6 @@
 apiVersion: v2
-name: XXXX-nfsv2-tftp
+# add a name here e.g. blxxi-ioc-files
+name:
 description: |
   A service for serving IOC files to RTEMS 5 hard IOCs via TFTP and NFSv2
 

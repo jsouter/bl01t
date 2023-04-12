@@ -1,3 +1,5 @@
 # this is an internal DLS reference at present. TODO - open source this container
 image: gcr.io/diamond-privreg/controls/nfsv2-tftp-server:latest
+
+# use an available address from the cluster load balancer static IP range
 loadBalancerIP:
