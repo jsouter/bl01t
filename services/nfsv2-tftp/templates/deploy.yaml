@@ -30,6 +30,7 @@ metadata:
   name: {{ .Chart.Name }}
   labels:
     app: {{ .Chart.Name }}
+    ioc-file-server: "true"
 spec:
   replicas: 1
   selector:
@@ -39,6 +40,7 @@ spec:
     metadata:
       labels:
         app: {{ .Chart.Name }}
+        ioc-file-server: "true"
     spec:
       volumes:
         - name: ioc-nfsv2-tftp-volume

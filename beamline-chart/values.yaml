@@ -8,6 +8,10 @@ exports:
     # NOTE: the following are all beamline defaults that can be overridden in
     # individual IOC values.yaml files.
 
+    # for RTEMS IOCS this is the PVC name for the filesystem where RTEMS
+    # IOCs look for their files
+    nfsv2TftpClaim: blxxi-ioc-files-claim
+
     # provide a PVC for autosave
     autosave: true
 
@@ -29,7 +33,7 @@ exports:
       # by default enable a liveness probe that checks ${IOC_PREFIX}:UPTIME
       - name: "K8S_IOC_LIVENESS_ENABLED"
         value: true
-      #
+
       # TODO - NOT YET REQUIRED ################################################
       #
       # In future these values could be used to auto configure an RTEMS
@@ -43,5 +47,3 @@ exports:
         value: "69"
       - name: "K8S_IOC_NFS_MOUNT"
         value: "127.0.0.1:iocs"
-      - name: "K8S_IOC_ROOT"
-        value: "/nfsv2-tftp"

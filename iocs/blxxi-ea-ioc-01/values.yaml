@@ -5,7 +5,7 @@ prefix: BLXXI-EA-IOC-01
 #
 ################################################################################
 #
-# Below we show avbailble configuration Items. A standard Linux IOC which
+# Below we show available configuration Items. A standard Linux IOC
 # will work with all of these commented out as the defaults will work as is.
 #
 ################################################################################
