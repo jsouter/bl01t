@@ -1,7 +1,7 @@
 apiVersion: v2
 name: beamline-chart
 description: |
-  IOC for the blxxi test beamline
+  IOC for the hqv85942 test beamline
 
 type: application
 
